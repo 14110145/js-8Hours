@@ -1,0 +1,33 @@
+.myContainer{
+    max-width: 1140px;
+    margin: 0 auto;
+    background-color: floralwhite;
+}
+.box-title{
+    text-align: center;
+    border: black solid 1px;
+}
+.box-content{
+    border: black solid 1px;
+    display: flex;
+    justify-content: space-around;
+}
+.box-content button{
+    margin: 10px;
+}
+.box-result{
+    border: 1px solid black;
+    height: 52px;
+    text-align: center;
+}
+.box-result-challenge-2{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.box-result-challenge-2 img{
+    padding: 5px;
+    margin: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
