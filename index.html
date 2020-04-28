@@ -60,15 +60,39 @@
         </div>
 
         <div class="box-title">
-            <h2>Challegin 5: Blackjack</h2>
+            <h2>Challegen 5: Blackjack</h2>
+            <h2>
+                <span id="blackjack-span">
+                    Let's Play
+                </span>
+            </h2>
         </div>
         <div class="box-result-challenge-5" id="flex-box-challenge-5">
             <div id="flex-box-challenge-5-left">
+                <h3>You: <Span id="your-blackjack-count">0</Span></h3>
             </div>
-            <div id="flex-box-challenge-5-right">  
+            <div id="flex-box-challenge-5-right">
+                <h3>Dealer <Span id="dealer-blackjack-count">0</Span></h3>
             </div>
-            <div id="flex-box-challenge-5-bottom">  
-            </div>
+        </div>
+        <div id="flex-box-challenge-5-bottom">
+            <button type="button" class="btn btn-primary" id="blackjack-hit">Hit</button>
+            <button type="button" class="btn btn-warning" id="blackjack-stand">Stand</button>
+            <button type="button" class="btn btn-danger"id="blackjack-deal">Deal</button>
+        </div>
+        <div id="box-blackjack-result">
+            <table id="box-blackjack">
+                <tr>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Draws</th>
+                </tr>
+                <tr>
+                    <td><span id="Wins">0</span></td>
+                    <td><span id="Losses">0</span></td>
+                    <td><span id="Draws">0</span></td>
+                </tr>
+            </table>
         </div>
     </div>
 

@@ -58,18 +58,48 @@
 #flex-box-challenge-5{
     display: flex;
     flex-wrap: wrap;
-    background-color: darkgreen;
+    background-color: seagreen;
 }
-#flex-box-challenge-5 div{
+#flex-box-challenge-5-left, #flex-box-challenge-5-right{
     height: 320px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
     border: 1px solid black;
 }
-#flex-box-challenge-5-left{
-    flex-grow: 1;
+#flex-box-challenge-5-left h3, #flex-box-challenge-5-right h3{
+    align-self: flex-start;
 }
-#flex-box-challenge-5-right{
-    flex-grow: 1;
+#flex-box-challenge-5-left img, #flex-box-challenge-5-right img{
+    width: 77px;
+    margin: 5px;
+    height: auto;
 }
+
 #flex-box-challenge-5-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
     width: 100%;
+}
+#flex-box-challenge-5-bottom button{
+    margin: 8px;
+    border: 1px solid white;
+}
+#box-blackjack-result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+#box-blackjack-result table{
+    margin: 20px 0;
+}
+#box-blackjack-result tr, td, th{
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
 }
