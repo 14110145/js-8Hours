@@ -149,16 +149,55 @@ function buttonsRandom(){
 //Challenge: 5
 let blackjackGame = {
     'you': {'scoreSpan': '#your-blackjack-count', 'div': '#flex-box-challenge-5-left', 'score': 0},
-    'dealer': {'scoreSpan': '#dealer-blackjack-count', 'div': '#flex-box-challenge-5-right', 'score': 0}
+    'dealer': {'scoreSpan': '#dealer-blackjack-count', 'div': '#flex-box-challenge-5-right', 'score': 0},
+    'cards': ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'],
+    'cardsMap': {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10,
+    'J': 10, 'Q': 10, 'K': 10, 'A': [1, 11]}
 };
 
 const YOU = blackjackGame['you'];
 const DEALER = blackjackGame['dealer'];
 
+const hitSound = new Audio('static/sounds/swish.m4a')
+
 document.querySelector('#blackjack-hit').addEventListener('click',blackJackHit);
+document.querySelector('#blackjack-deal').addEventListener('click',blackjackDeal);
 
 function blackJackHit(){
-    let cardImg = document.createElement('img');
-    cardImg.src = 'static/images/Q.png';
-    document.querySelector(YOU['div']).appendChild(cardImg);
+    let card = randomCard();
+    showCard(card, YOU);
+    updateScore(card, YOU);
+    showScore(YOU);
+    console.log(YOU['score']);
 };
+function showCard(card, activePlayer){
+    let cardImg = document.createElement('img');
+    cardImg.src = `static/images/${card}.png`;
+    document.querySelector(activePlayer['div']).appendChild(cardImg);
+    hitSound.play();
+};
+
+function blackjackDeal(){
+    let yourImgs = document.querySelector(YOU['div']).querySelectorAll('img');
+    let dealerImgs = document.querySelector(DEALER['div']).querySelectorAll('img');
+
+    for(let i=0; i < yourImgs.length; i++){
+        yourImgs[i].remove();
+    };
+    for(let i=0; i < dealerImgs.length; i++){
+        dealerImgs[i].remove();
+    }
+};
+
+function randomCard(){
+    let randomIndex = Math.floor(Math.random() * 13);
+    return blackjackGame['cards'][randomIndex];
+}
+
+function updateScore(card, activePlayer){
+    activePlayer['score'] += parseInt(blackjackGame['cardsMap'][card]);
+}
+
+function showScore(activePlayer){
+    document.querySelector(activePlayer['scoreSpan']).textContent = activePlayer['score']
+}
