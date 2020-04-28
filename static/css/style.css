@@ -61,16 +61,19 @@
     background-color: seagreen;
 }
 #flex-box-challenge-5-left, #flex-box-challenge-5-right{
-    height: 320px;
+    height: 420px;
     flex-grow: 1;
-    display: flex;
+    flex-basis: 50%;
+    flex-wrap: wrap;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     color: white;
     border: 1px solid black;
 }
 #flex-box-challenge-5-left h3, #flex-box-challenge-5-right h3{
-    align-self: flex-start;
+    /* align-self: flex-start; */
+    text-align: center;
 }
 #flex-box-challenge-5-left img, #flex-box-challenge-5-right img{
     width: 77px;
